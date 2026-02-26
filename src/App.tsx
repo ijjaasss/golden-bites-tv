@@ -9,10 +9,10 @@ function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const sections = useMemo(() => [
-   { id: "intro", component: IntroSection },
-  { id: "offers", component: OfferSlider },
-     { id: "juice", component: JuiceSection },
-       { id: "shawarma", component: ShawarmaSection },
+  //  { id: "intro", component: IntroSection },
+  // { id: "offers", component: OfferSlider },
+  { id: "juice", component: JuiceSection },
+  //      { id: "shawarma", component: ShawarmaSection },
   ], []);
 
   useEffect(() => {
