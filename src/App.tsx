@@ -11,8 +11,8 @@ function App() {
   const sections = useMemo(() => [
    { id: "intro", component: IntroSection },
   { id: "offers", component: OfferSlider },
-  { id: "juice", component: JuiceSection },
-      { id: "shawarma", component: ShawarmaSection },
+     { id: "juice", component: JuiceSection },
+       { id: "shawarma", component: ShawarmaSection },
   ], []);
 
   useEffect(() => {
