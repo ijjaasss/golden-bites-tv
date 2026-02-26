@@ -2,16 +2,16 @@ import { juices } from './data/juices';
 
 export default function JuiceSection() {
   return (
-    <div className="min-h-screen w-full bg-linear-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center p-0.5 sm:p-1 md:p-2 lg:p-3">
-      <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold text-yellow-400 mb-0.5 sm:mb-1 text-center">
+    <div className="min-h-screen w-full bg-linear-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center p-0.5">
+      <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-yellow-400 mb-0.5 text-center leading-tight">
         Fresh Juices
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-0.5 sm:gap-1 md:gap-1.5 lg:gap-2 max-w-7xl w-full">
+      <div className="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 gap-0.5 max-w-7xl w-full">
         {juices.slice(0, 10).map((juice) => (
           <div
             key={juice.id}
-            className="bg-linear-to-br from-gray-800 to-gray-900 rounded-sm sm:rounded-md overflow-hidden shadow transform transition-all duration-300 hover:scale-105 border border-yellow-600/20"
+            className="bg-linear-to-br from-gray-800 to-gray-900 rounded-[2px] overflow-hidden shadow-sm border border-yellow-600/20"
           >
             <div className="relative aspect-square bg-gray-700 overflow-hidden">
               <img
@@ -24,8 +24,8 @@ export default function JuiceSection() {
               />
             </div>
 
-            <div className="p-0.5 sm:p-1 md:p-1.5 text-center">
-              <h3 className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base font-semibold text-white truncate">
+            <div className="p-[2px] text-center">
+              <h3 className="text-[8px] xs:text-[9px] sm:text-[10px] md:text-xs lg:text-sm font-semibold text-white truncate">
                 {juice.name}
               </h3>
             </div>
