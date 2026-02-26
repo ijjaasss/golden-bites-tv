@@ -1,73 +1,46 @@
 import { useState, useEffect, useMemo } from 'react';
-import { AnimatePresence, motion } from 'framer-motion';
-import IntroScreen from './components/IntroScreen';
-import HeroSection from './components/HeroSection';
+import IntroSection from './components/IntroSection';
 import OfferSlider from './components/OfferSlider';
 import JuiceSection from './components/JuiceSection';
 import ShawarmaSection from './components/ShawarmaSection';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [currentSection, setCurrentSection] = useState(0);
-  const [isIdle, setIsIdle] = useState(false);
+  const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const sections = useMemo(() => [
-   { id: 'hero', component: HeroSection },
-  { id: 'offers', component: OfferSlider },
-    { id: 'juice', component: JuiceSection },
-    { id: 'shawarma', component: ShawarmaSection },
-  
+    { id: "intro", component: IntroSection },
+    { id: "offers", component: OfferSlider },
+    { id: "juice", component: JuiceSection },
+    { id: "shawarma", component: ShawarmaSection },
   ], []);
 
   useEffect(() => {
-    if (showIntro) return;
-
     const interval = setInterval(() => {
-      setCurrentSection((prev) => (prev + 1) % sections.length);
-    }, 12000);
+      setIsTransitioning(true);
+
+      setTimeout(() => {
+        setCurrentSectionIndex((prevIndex) =>
+          prevIndex === sections.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsTransitioning(false);
+      }, 300);
+    }, 8000);
 
     return () => clearInterval(interval);
-  }, [showIntro, sections.length]);
+  }, [sections.length]);
 
-  useEffect(() => {
-    let timeout: number;
-
-    const handleActivity = () => {
-      setIsIdle(false);
-      clearTimeout(timeout);
-      timeout = setTimeout(() => setIsIdle(true), 5000);
-    };
-
-    window.addEventListener('mousemove', handleActivity);
-    window.addEventListener('keydown', handleActivity);
-    handleActivity();
-
-    return () => {
-      window.removeEventListener('mousemove', handleActivity);
-      window.removeEventListener('keydown', handleActivity);
-      clearTimeout(timeout);
-    };
-  }, []);
-
-  const CurrentSectionComponent = sections[currentSection].component;
+  const CurrentComponent = sections[currentSectionIndex].component;
 
   return (
-    <div className={`min-h-screen overflow-hidden ${isIdle ? 'cursor-none' : ''}`}>
-      <AnimatePresence mode="wait">
-        {showIntro ? (
-          <IntroScreen key="intro" onComplete={() => setShowIntro(false)} />
-        ) : (
-          <motion.div
-            key={sections[currentSection].id}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <CurrentSectionComponent />
-          </motion.div>
-        )}
-      </AnimatePresence>
+    <div className="w-screen h-screen overflow-hidden">
+      <div
+        className={`w-full h-full transition-opacity duration-300 ${
+          isTransitioning ? 'opacity-0' : 'opacity-100'
+        }`}
+      >
+        <CurrentComponent />
+      </div>
     </div>
   );
 }

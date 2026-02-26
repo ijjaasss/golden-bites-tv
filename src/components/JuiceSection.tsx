@@ -1,87 +1,37 @@
-import { motion } from 'framer-motion';
-import Card from './Card';
-
-const juices = [
-  { id: 1, name: 'Ginger Lime', image: '/image/ginger lime.jpg' },
-  { id: 2, name: 'Blue Lime', image: '/image/Blue Lime.jpg' },
-  { id: 3, name: 'Lemon Soda', image: '/image/Lemon Soda.jpeg' },
-  { id: 4, name: 'Lime', image: '/image/Lime Juice.jpeg' },
-  { id: 5, name: 'Mint Lime', image: '/image/Mint Lime.jpeg' },
-  { id: 6, name: 'Pineapple Lime', image: '/image/Pineapple Lime.jpg' },
-  { id: 7, name: 'Musambi', image: '/image/Mosambi Juice.jpg' },
-  { id: 8, name: 'Watermelon', image: '/image/Watermelon Juice.png' },
-  { id: 9, name: 'Pineapple', image: '/image/Pineapple Juice.jpeg' },
-  { id: 10, name: 'Pulpy Grape', image: '/image/pulpy grape.jpg' }
-];
+import { juices } from './data/juices';
 
 export default function JuiceSection() {
   return (
-    <section className="h-screen flex items-center justify-center bg-white overflow-hidden">
-      <div className="w-full h-full flex flex-col px-4 py-4 md:py-6 lg:py-8">
-        {/* Title Section - Takes less height */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-3 md:mb-4 lg:mb-6 shrink-0"
-        >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#222222] leading-tight">
-            Fresh Juice Specials
-          </h2>
-          <p className="text-base sm:text-lg md:text-xl text-gray-600 mt-1">
-            Made with Love, Served Fresh
-          </p>
-        </motion.div>
+    <div className="min-h-screen w-full bg-linear-to-br from-gray-900 via-black to-gray-800 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 lg:p-10">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-yellow-400 mb-4 sm:mb-6 md:mb-8 lg:mb-10 text-center">
+        Fresh Juices
+      </h2>
 
-        {/* Grid Container - Takes remaining height and ensures all items fit */}
-        <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-3 md:gap-4 lg:gap-5 min-h-0">
-          {juices.map((juice, index) => (
-            <Card key={juice.id} delay={index * 0.1}>
-              <motion.div 
-                className="h-full flex flex-col items-center justify-center border-2 border-[#FF7A00] rounded-lg sm:rounded-xl p-2 sm:p-3 md:p-4 bg-white shadow-md hover:shadow-lg transition-shadow"
-                whileHover={{ scale: 1.02 }}
-              >
-                {/* Juice Icon/Image Placeholder */}
-                 <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-20 lg:h-20 mb-1 sm:mb-2 bg-linear-to-br from-[#FFD54F]/30 to-[#FFA726]/30 rounded-full flex items-center justify-center overflow-hidden">
-                  <img 
-                    src={juice.image} 
-                    alt={juice.name}
-                    className="w-full h-full object-cover"
-                    
-                  />
-                </div>
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 sm:gap-4 md:gap-5 lg:gap-6 max-w-7xl w-full">
+        {juices.map((juice) => (
+          <div
+            key={juice.id}
+            className="bg-linear-to-br from-gray-800 to-gray-900 rounded-xl overflow-hidden shadow-xl transform transition-all duration-300 hover:scale-105 border border-yellow-600/20"
+          >
+            <div className="relative aspect-square bg-gray-700 overflow-hidden">
+              <img
+                src={juice.image}
+                alt={juice.name}
+                className="w-full h-full object-cover"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.pexels.com/photos/1638280/pexels-photo-1638280.jpeg?auto=compress&cs=tinysrgb&w=400';
+                }}
+              />
+            </div>
 
-                {/* Juice Name */}
-                <h3 className="text-xs sm:text-sm md:text-base lg:text-lg font-bold text-[#222222] text-center leading-tight">
-                  {juice.name}
-                </h3>
-
-                {/* Animated Dot */}
-                <motion.div
-                  animate={{
-                    scale: [1, 1.2, 1],
-                  }}
-                  transition={{
-                    duration: 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: index * 0.1
-                  }}
-                  className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#FF7A00] rounded-full mt-1 sm:mt-2"
-                />
-              </motion.div>
-            </Card>
-          ))}
-        </div>
-
-        {/* Optional: Decorative Bottom Bar */}
-        <motion.div 
-          initial={{ width: 0 }}
-          animate={{ width: "100%" }}
-          transition={{ duration: 1, delay: 0.5 }}
-          className="h-0.5 bg-linear-to-r from-transparent via-[#FF7A00] to-transparent mt-2 shrink-0"
-        />
+            <div className="p-2 sm:p-3 md:p-4 text-center">
+              <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-semibold text-white">
+                {juice.name}
+              </h3>
+            </div>
+          </div>
+        ))}
       </div>
-    </section>
+    </div>
   );
 }
