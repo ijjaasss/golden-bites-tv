@@ -27,7 +27,7 @@ function App() {
         );
         setIsTransitioning(false);
       }, 300);
-    }, 8000);
+    }, 10000);
 
     return () => clearInterval(interval);
   }, [sections.length]);
