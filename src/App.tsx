@@ -4,6 +4,7 @@ import OfferSlider from './components/OfferSlider';
 import JuiceSection from './components/JuiceSection';
 import ShawarmaSection from './components/ShawarmaSection';
 import LimeSection from './components/LimeSection';
+import LaysShawarma from './components/LaysShawarma';
 
 function App() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
@@ -11,10 +12,11 @@ function App() {
 
   const sections = useMemo(() => [
     { id: "intro", component: IntroSection },
-  { id: "offers", component: OfferSlider },
-  { id: "lime", component: LimeSection },
-  { id: "juice", component: JuiceSection },
-     { id: "shawarma", component: ShawarmaSection },
+   { id: "offers", component: OfferSlider },
+   { id: "lime", component: LimeSection },
+   { id: "juice", component: JuiceSection },
+      { id: "shawarma", component: ShawarmaSection },
+       { id: "lays", component: LaysShawarma },
   ], []);
 
   useEffect(() => {
