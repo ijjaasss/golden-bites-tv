@@ -10,19 +10,19 @@ export const shawarmas: Shawarma[] = [
     id: 1,
     name: "Charcoal Shawarma",
     description: "Delicious charcoal-grilled shawarma wrapped with fresh vegetables and flavorful sauce.",
-    image: "/image/charcoal-shawarma.jpg"
+    image: "/image/shawarma.jpg"
   },
   {
     id: 2,
     name: "Special Charcoal",
     description: "Extra meat, premium toppings, and signature sauce.",
-    image: "/image/special-charcoal-shawarma.jpg"
+    image: "/image/shawarma.jpg"
   },
   {
     id: 3,
     name: "Combo Shawarma",
     description: "Served with fries and a refreshing drink.",
-    image: "/image/combo-charcoal-shawarma.jpg"
+    image: "/image/shawarma.jpg"
   },
   {
     id: 4,
