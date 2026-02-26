@@ -12,22 +12,17 @@ export const shawarmas: Shawarma[] = [
     description: "Delicious charcoal-grilled shawarma wrapped with fresh vegetables and flavorful sauce.",
     image: "/image/shawarma.jpg"
   },
-  {
+   {
     id: 2,
-    name: "Special Charcoal",
-    description: "Extra meat, premium toppings, and signature sauce.",
-    image: "/image/shawarma.jpg"
-  },
-  {
-    id: 3,
-    name: "Combo Shawarma",
-    description: "Served with fries and a refreshing drink.",
-    image: "/image/shawarma.jpg"
-  },
-  {
-    id: 4,
     name: "Lays Charcoal",
     description: "Served with crispy Lays chips for extra crunch.",
     image: "/image/lays shawarma.jpeg"
+  },
+  {
+    id: 3,
+    name: "Special Charcoal",
+    description: "Extra meat, premium toppings, and signature sauce.",
+    image: "/image/shawarma sp.jpg"
   }
+ 
 ];
