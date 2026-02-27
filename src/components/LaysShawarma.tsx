@@ -13,7 +13,7 @@ function LaysShawarma() {
         <motion.h1
           className="
             absolute
-            text-[90px] sm:text-[150px] lg:text-[240px]
+            text-[120px] sm:text-[200px] lg:text-[300px]
             font-extrabold
             tracking-widest
             text-yellow-400/10
@@ -29,19 +29,16 @@ function LaysShawarma() {
             repeat: Infinity,
             ease: "easeInOut",
           }}
-          style={{
-            textShadow: "8px 8px 40px rgba(0,0,0,0.8)",
-          }}
         >
           LAYS
         </motion.h1>
 
-        {/* SHAWARMA IMAGE */}
+        {/* BIGGER SHAWARMA IMAGE */}
         <motion.div
           className="relative z-10"
           animate={{
             rotateY: [0, 18, -18, 0],
-            y: [0, -18, 0],
+            y: [0, -25, 0],
           }}
           transition={{
             duration: 6,
@@ -54,31 +51,32 @@ function LaysShawarma() {
             src="/image/lays shawar.png"
             alt="Lays Shawarma"
             className="
-              w-[300px]
-              sm:w-[380px]
-              lg:w-[500px]
+              w-[420px]
+              sm:w-[520px]
+              lg:w-[650px]
               object-contain
-              drop-shadow-[0_35px_70px_rgba(255,215,0,0.35)]
+              drop-shadow-[0_45px_90px_rgba(255,215,0,0.45)]
             "
           />
         </motion.div>
 
-        {/* TITLE + PRICE ONLY */}
+        {/* FRONT TITLE + PRICE */}
         <motion.div
-          className="absolute bottom-[12%] text-center"
-          initial={{ opacity: 0, y: 40 }}
+          className="absolute bottom-[8%] text-center z-20"
+          initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2 }}
         >
-          {/* TITLE */}
+          {/* TITLE (FRONT + BIGGER) */}
           <motion.h2
             className="
-              text-4xl sm:text-5xl lg:text-6xl
+              font-['Archivo Black',sans-serif]
+              text-4xl sm:text-5xl lg:text-7xl
               font-extrabold
               text-yellow-400
               tracking-wide
             "
-            animate={{ y: [0, -6, 0] }}
+            animate={{ y: [0, -10, 0] }}
             transition={{
               duration: 4,
               repeat: Infinity,
@@ -86,22 +84,22 @@ function LaysShawarma() {
             }}
             style={{
               textShadow:
-                "0 0 20px rgba(255,215,0,0.5), 0 0 40px rgba(255,215,0,0.2)",
+                "0 0 25px rgba(255,215,0,0.7), 0 0 60px rgba(255,215,0,0.4)",
             }}
           >
             Lays Shawarma
           </motion.h2>
 
-          {/* PRICE */}
+          {/* BIG PRICE */}
           <motion.div
             className="
-              mt-4
-              text-7xl lg:text-8xl
+              mt-6
+              text-8xl sm:text-9xl lg:text-[140px]
               font-extrabold
               text-white
             "
             animate={{
-              scale: [1, 1.08, 1],
+              scale: [1, 1.12, 1],
             }}
             transition={{
               duration: 3,
@@ -110,12 +108,13 @@ function LaysShawarma() {
             }}
             style={{
               textShadow:
-                "0 0 25px rgba(255,215,0,0.6), 0 0 60px rgba(255,215,0,0.3)",
+                "0 0 35px rgba(255,215,0,0.8), 0 0 80px rgba(255,215,0,0.4)",
             }}
           >
             ₹99
           </motion.div>
         </motion.div>
+
       </div>
     </div>
   );

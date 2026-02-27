@@ -1,5 +1,9 @@
 
 @import "tailwindcss";
+@theme {
+  --font-poster: "Bebas Neue", sans-serif;
+  --font-modern: "Poppins", sans-serif;
+}
 @layer base {
   * {
     -webkit-font-smoothing: antialiased;

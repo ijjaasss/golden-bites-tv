@@ -4,6 +4,7 @@ import OfferSlider from './components/OfferSlider';
 import JuiceSection from './components/JuiceSection';
 import ShawarmaSection from './components/ShawarmaSection';
 import LimeSection from './components/LimeSection';
+import LimeSection1 from './components/LimeSection1';
 import LaysShawarma from './components/LaysShawarma';
 
 function App() {
@@ -11,11 +12,12 @@ function App() {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const sections = useMemo(() => [
-    { id: "intro", component: IntroSection },
-   { id: "offers", component: OfferSlider },
+     { id: "intro", component: IntroSection },
+    { id: "offers", component: OfferSlider },
    { id: "lime", component: LimeSection },
+    { id: "lime1", component: LimeSection1 },
    { id: "juice", component: JuiceSection },
-      { id: "shawarma", component: ShawarmaSection },
+       { id: "shawarma", component: ShawarmaSection },
        { id: "lays", component: LaysShawarma },
   ], []);
 

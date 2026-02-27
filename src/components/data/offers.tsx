@@ -14,7 +14,7 @@ export const offers: Offer[] = [
     subtitle: 'shawarma',
     price: '99',
     badge: 'spicy',
-    image: "/image/lays shawarma.jpeg"
+    image: "/image/lys shawarma.png"
   },
   {
     id: 2,
