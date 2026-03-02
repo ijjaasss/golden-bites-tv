@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 function LaysShawarma() {
   return (
-    <div className="w-screen h-screen bg-gradient-to-br from-black via-neutral-900 to-black flex items-center justify-center overflow-hidden text-white">
+    <div className="w-screen h-screen bg-linear-to-br from-black via-neutral-900 to-black flex items-center justify-center overflow-hidden text-white">
 
       <div
         className="relative flex items-center justify-center"
@@ -51,9 +51,9 @@ function LaysShawarma() {
             src="/image/lays shawar.png"
             alt="Lays Shawarma"
             className="
-              w-[420px]
-              sm:w-[520px]
-              lg:w-[650px]
+              w-105
+              sm:w-1430
+              lg:w-162.5
               object-contain
               drop-shadow-[0_45px_90px_rgba(255,215,0,0.45)]
             "

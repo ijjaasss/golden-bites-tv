@@ -6,7 +6,6 @@ import ShawarmaSection from './components/ShawarmaSection';
 import LimeSection from './components/LimeSection';
 import LimeSection1 from './components/LimeSection1';
 import LaysShawarma from './components/LaysShawarma';
-import GrillBurgerSection from './components/GrillBurgerSection';
 import VideoPlay from './components/VideoPlay';
 
 type Section = {
