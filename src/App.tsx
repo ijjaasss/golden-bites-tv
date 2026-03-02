@@ -6,19 +6,29 @@ import ShawarmaSection from './components/ShawarmaSection';
 import LimeSection from './components/LimeSection';
 import LimeSection1 from './components/LimeSection1';
 import LaysShawarma from './components/LaysShawarma';
+import GrillBurgerSection from './components/GrillBurgerSection';
+import VideoPlay from './components/VideoPlay';
 
+type Section = {
+  id: string;
+  component: React.ReactNode;
+};
 function App() {
   const [currentSectionIndex, setCurrentSectionIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  const sections = useMemo(() => [
-     { id: "intro", component: IntroSection },
-    { id: "offers", component: OfferSlider },
-   { id: "lime", component: LimeSection },
-    { id: "lime1", component: LimeSection1 },
-   { id: "juice", component: JuiceSection },
-       { id: "shawarma", component: ShawarmaSection },
-       { id: "lays", component: LaysShawarma },
+  const sections = useMemo<Section[]>(() => [
+     { id: "intro", component: <IntroSection /> },
+    { id: "offers", component: <OfferSlider />},
+   { id: "lime", component: <LimeSection /> },
+    { id: "lime1", component: <LimeSection1 /> },
+   { id: "juice", component: <JuiceSection /> },
+       { id: "shawarma", component: <ShawarmaSection />},
+       { id: "lays", component: <LaysShawarma />},
+     {
+    id: "grillburger",
+    component: <VideoPlay src="/video/burger video.mp4" />,
+  }
   ], []);
 
   useEffect(() => {
@@ -45,7 +55,7 @@ function App() {
           isTransitioning ? 'opacity-0' : 'opacity-100'
         }`}
       >
-        <CurrentComponent />
+       {CurrentComponent}
       </div>
     </div>
   );
