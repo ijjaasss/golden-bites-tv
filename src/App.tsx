@@ -27,6 +27,14 @@ function App() {
      {
     id: "grillburger",
     component: <VideoPlay src="/video/burger video.mp4" />,
+  },
+  
+  {
+    id: "shawaya mandi",
+    component: <VideoPlay src="/video/shawaya mandi.mp4" />,
+  },{
+    id: "green apple mojito",
+    component: <VideoPlay src="/video/MOJITO.mp4" />,
   }
   ], []);
 
