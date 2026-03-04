@@ -1,10 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import IntroSection from './components/IntroSection';
 import OfferSlider from './components/OfferSlider';
-import JuiceSection from './components/JuiceSection';
-import ShawarmaSection from './components/ShawarmaSection';
-import LimeSection from './components/LimeSection';
-import LimeSection1 from './components/LimeSection1';
+
 import LaysShawarma from './components/LaysShawarma';
 import VideoPlay from './components/VideoPlay';
 
@@ -19,10 +16,7 @@ function App() {
   const sections = useMemo<Section[]>(() => [
      { id: "intro", component: <IntroSection /> },
     { id: "offers", component: <OfferSlider />},
-   { id: "lime", component: <LimeSection /> },
-    { id: "lime1", component: <LimeSection1 /> },
-   { id: "juice", component: <JuiceSection /> },
-       { id: "shawarma", component: <ShawarmaSection />},
+
        { id: "lays", component: <LaysShawarma />},
      {
     id: "grillburger",
@@ -35,6 +29,12 @@ function App() {
   },{
     id: "green apple mojito",
     component: <VideoPlay src="/video/MOJITO.mp4" />,
+  },{
+    id: "alfredo pasta",
+    component: <VideoPlay src="/video/Alfredo pasta (1).mp4" />,
+  },{
+    id: "chilli paneer pizza",
+    component: <VideoPlay src="/video/chilli paneer pizza.mp4" />,
   }
   ], []);
 
