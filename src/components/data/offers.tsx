@@ -20,7 +20,7 @@ export const offers: Offer[] = [
     id: 2,
     title: 'Charcoal Shawarma Combo',
     subtitle: 'Shawarma + French Fries + Soft Drinks',
-    price: '99',
+    price: '119',
     badge: 'spicy',
     image: "/image/charcoal combo.png"
   },

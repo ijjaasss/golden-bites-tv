@@ -38,6 +38,9 @@ function App() {
   },{
     id: "avil milk",
     component: <VideoPlay src="/video/avil milk.mp4" />,
+  },{
+    id: "club sandwich",
+    component: <VideoPlay src="/video/club sandwitch.mp4" />,
   }
   ], []);
 
