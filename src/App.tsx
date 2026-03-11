@@ -35,6 +35,9 @@ function App() {
   },{
     id: "chilli paneer pizza",
     component: <VideoPlay src="/video/chilli paneer pizza.mp4" />,
+  },{
+    id: "avil milk",
+    component: <VideoPlay src="/video/avil milk.mp4" />,
   }
   ], []);
 
